@@ -114,7 +114,7 @@ class PerspectiveAPI:
     @staticmethod
     def _make_service(api_key: str):
         # Generate API client object dynamically based on service name and version
-        return discovery.build('commentanalyzer', 'v1alpha1', developerKey=api_key)
+        return discovery.build('commentanalyzer', 'v1alpha1', developerKey=api_key, discoveryServiceUrl="https://commentanalyzer.googleapis.com/$discovery/rest?version=v1alpha1") #discoveryServiceUrl added after encountering an error; see https://pythontechworld.com/issue/googleapis/google-api-python-client/1238
 
     @staticmethod
     def _make_request(text: str, service):
